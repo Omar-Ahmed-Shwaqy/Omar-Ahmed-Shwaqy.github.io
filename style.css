@@ -14,88 +14,23 @@
 a{color:inherit;text-decoration:none}p{color:var(--muted)}
 
 /* ===== ANIMATIONS ===== */
-
-/* 1. Satellite Orbit Animation */
-@keyframes satelliteOrbit {
-  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-}
-
-@keyframes satellitePulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-/* 2. Signal Waves Animation */
-@keyframes signalWave {
-  0% { transform: scale(0.8); opacity: 0; }
-  50% { opacity: 0.8; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
-
-@keyframes signalPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
-}
-
-/* 3. Floating Particles for 5G */
-@keyframes floatParticle {
-  0% { transform: translateY(0px) scale(1); opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateY(-200px) scale(0); opacity: 0; }
-}
-
-@keyframes floatParticle2 {
-  0% { transform: translateY(0px) scale(1); opacity: 0; }
-  20% { opacity: 0.6; }
-  80% { opacity: 0.6; }
-  100% { transform: translateY(-150px) scale(0); opacity: 0; }
-}
-
-/* 4. Glow Ring */
-@keyframes glowRing {
-  0% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.3); opacity: 0; }
-  100% { transform: scale(1); opacity: 0.3; }
-}
-
-/* 5. 5G Text Animation */
-@keyframes fiveGPulse {
-  0%, 100% { text-shadow: 0 0 20px rgba(0,212,255,0.3), 0 0 60px rgba(0,212,255,0.1); }
-  50% { text-shadow: 0 0 40px rgba(0,212,255,0.6), 0 0 80px rgba(0,212,255,0.2); }
-}
-
-/* 6. Floating Icons */
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
-}
-
-/* 7. Background Gradient Move */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 8. Shimmer Text */
-@keyframes shimmerText {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-/* 9. Connection Lines */
-@keyframes drawLine {
-  0% { stroke-dashoffset: 1000; }
-  100% { stroke-dashoffset: 0; }
-}
-
-/* 10. Router Blink */
-@keyframes routerBlink {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
+@keyframes satelliteOrbit{0%{transform:rotate(0deg) translateX(120px) rotate(0deg)}100%{transform:rotate(360deg) translateX(120px) rotate(-360deg)}}
+@keyframes satellitePulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes signalWave{0%{transform:scale(.8);opacity:0}50%{opacity:.8}100%{transform:scale(1.8);opacity:0}}
+@keyframes signalPulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes floatParticle{0%{transform:translateY(0) scale(1);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(-200px) scale(0);opacity:0}}
+@keyframes floatParticle2{0%{transform:translateY(0) scale(1);opacity:0}20%{opacity:.6}80%{opacity:.6}100%{transform:translateY(-150px) scale(0);opacity:0}}
+@keyframes glowRing{0%{transform:scale(1);opacity:.3}50%{transform:scale(1.3);opacity:0}100%{transform:scale(1);opacity:.3}}
+@keyframes fiveGPulse{0%,100%{text-shadow:0 0 20px rgba(0,212,255,.3),0 0 60px rgba(0,212,255,.1)}50%{text-shadow:0 0 40px rgba(0,212,255,.6),0 0 80px rgba(0,212,255,.2)}}
+@keyframes floatIcon{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-15px) rotate(5deg)}}
+@keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes shimmerText{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes drawLine{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+@keyframes routerBlink{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes glow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes rotateGlow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes pulseGlow{0%,100%{transform:scale(1);filter:drop-shadow(0 0 10px rgba(0,212,255,.2))}50%{transform:scale(1.1);filter:drop-shadow(0 0 30px rgba(0,212,255,.4))}}
+@keyframes shimmer{0%,100%{opacity:1}50%{opacity:.5}}
 
 /* ===== NAV ===== */
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;position:sticky;top:0;z-index:20;background:rgba(10,10,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
@@ -109,59 +44,19 @@ nav a:hover{color:var(--text)}
 .theme:hover,.menu:hover{border-color:var(--accent);box-shadow:0 0 20px rgba(0,212,255,.1)}
 .menu{display:none}
 
-/* ===== HERO WITH ANIMATIONS ===== */
+/* ===== HERO ===== */
 .hero{max-width:var(--max);margin:auto;min-height:calc(100vh - 76px);padding:90px 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle at 30% 50%,rgba(0,212,255,.03),transparent 60%);animation:gradientMove 15s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle at 70% 50%,rgba(124,58,237,.03),transparent 60%);animation:gradientMove 20s ease-in-out infinite reverse;pointer-events:none}
 
-/* Background Particles - 5G Signals */
-.hero::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  right:-20%;
-  width:800px;
-  height:800px;
-  background:radial-gradient(circle at 30% 50%, rgba(0,212,255,0.03), transparent 60%);
-  animation:gradientMove 15s ease-in-out infinite;
-  pointer-events:none;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  bottom:-30%;
-  left:-10%;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle at 70% 50%, rgba(124,58,237,0.03), transparent 60%);
-  animation:gradientMove 20s ease-in-out infinite reverse;
-  pointer-events:none;
-}
-
-/* Floating 5G Particles */
-.particle-container{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:0;
-}
-.particle{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:var(--accent);
-  border-radius:50%;
-  box-shadow:0 0 20px rgba(0,212,255,0.5);
-  animation:floatParticle 4s ease-in-out infinite;
-}
+.particle-container{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}
+.particle{position:absolute;width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 20px rgba(0,212,255,.5);animation:floatParticle 4s ease-in-out infinite}
 .particle:nth-child(1){left:10%;animation-delay:0s;width:8px;height:8px}
 .particle:nth-child(2){left:25%;animation-delay:1.2s;width:4px;height:4px;background:var(--accent2)}
-.particle:nth-child(3){left:45%;animation-delay:0.6s;width:10px;height:10px}
+.particle:nth-child(3){left:45%;animation-delay:.6s;width:10px;height:10px}
 .particle:nth-child(4){left:65%;animation-delay:2s;width:5px;height:5px;background:var(--accent2)}
 .particle:nth-child(5){left:80%;animation-delay:1.5s;width:7px;height:7px}
-.particle:nth-child(6){left:90%;animation-delay:0.3s;width:4px;height:4px}
+.particle:nth-child(6){left:90%;animation-delay:.3s;width:4px;height:4px}
 .particle:nth-child(7){left:35%;animation-delay:2.5s;width:6px;height:6px}
 .particle:nth-child(8){left:55%;animation-delay:1.8s;width:8px;height:8px;background:var(--accent2)}
 
@@ -180,101 +75,35 @@ nav a:hover{color:var(--text)}
 .ghost:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,212,255,.1)}
 .meta{display:flex;gap:20px;font-size:13px;color:var(--muted);position:relative;z-index:1}
 
-/* Hero Card with Satellite Animation */
+/* Hero Card */
 .hero-card{height:470px;position:relative;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 70% 25%,rgba(0,212,255,.15),transparent 32%),radial-gradient(circle at 20% 80%,rgba(124,58,237,.12),transparent 35%),var(--surface);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .hero-card img{width:240px;height:240px;border-radius:50%;object-fit:cover;z-index:2;border:3px solid rgba(0,212,255,.2);animation:satellitePulse 4s ease-in-out infinite}
 
-/* Satellite Orbit Ring */
-.satellite-ring{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  pointer-events:none;
-}
-.satellite-ring .orbit{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:300px;
-  height:300px;
-  margin:-150px 0 0 -150px;
-  border:1px solid rgba(0,212,255,.08);
-  border-radius:50%;
-}
-.satellite-ring .orbit:nth-child(2){
-  width:380px;
-  height:380px;
-  margin:-190px 0 0 -190px;
-  border-color:rgba(124,58,237,.06);
-}
-.satellite-ring .satellite{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:20px;
-  height:20px;
-  margin:-10px 0 0 -10px;
-  animation:satelliteOrbit 8s linear infinite;
-}
-.satellite-ring .satellite::before{
-  content:'🛰️';
-  font-size:22px;
-  display:block;
-}
-.satellite-ring .satellite::after{
-  content:'';
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:40px;
-  height:2px;
-  background:linear-gradient(90deg,var(--accent),transparent);
-  transform:translate(-50%,-50%) rotate(90deg);
-  animation:signalPulse 1s ease-in-out infinite;
-}
+.satellite-ring{position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none}
+.satellite-ring .orbit{position:absolute;top:50%;left:50%;width:300px;height:300px;margin:-150px 0 0 -150px;border:1px solid rgba(0,212,255,.08);border-radius:50%}
+.satellite-ring .orbit:nth-child(2){width:380px;height:380px;margin:-190px 0 0 -190px;border-color:rgba(124,58,237,.06)}
+.satellite-ring .satellite{position:absolute;top:50%;left:50%;width:20px;height:20px;margin:-10px 0 0 -10px;animation:satelliteOrbit 8s linear infinite}
+.satellite-ring .satellite::before{content:'🛰️';font-size:22px;display:block}
+.satellite-ring .satellite::after{content:'';position:absolute;top:50%;left:50%;width:40px;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:translate(-50%,-50%) rotate(90deg);animation:signalPulse 1s ease-in-out infinite}
 
-/* Signal Waves from Card */
-.signal-waves{
-  position:absolute;
-  bottom:40px;
-  right:30px;
-  pointer-events:none;
-}
-.signal-wave{
-  position:absolute;
-  bottom:0;
-  right:0;
-  width:60px;
-  height:60px;
-  border:2px solid var(--accent);
-  border-radius:50%;
-  opacity:0;
-}
+.signal-waves{position:absolute;bottom:40px;right:30px;pointer-events:none}
+.signal-wave{position:absolute;bottom:0;right:0;width:60px;height:60px;border:2px solid var(--accent);border-radius:50%;opacity:0}
 .signal-wave:nth-child(1){animation:signalWave 2s ease-in-out infinite}
-.signal-wave:nth-child(2){animation:signalWave 2s ease-in-out infinite 0.6s}
+.signal-wave:nth-child(2){animation:signalWave 2s ease-in-out infinite .6s}
 .signal-wave:nth-child(3){animation:signalWave 2s ease-in-out infinite 1.2s}
 
 .orb{position:absolute;width:380px;height:380px;border:1px solid rgba(0,212,255,.06);border-radius:50%;animation:glowRing 6s ease-in-out infinite}
 .card-label{position:absolute;top:25px;left:25px;font-size:10px;letter-spacing:2px;color:var(--muted);z-index:3}
 .card-title{position:absolute;bottom:28px;left:28px;font:700 26px/1.05 "Space Grotesk";z-index:3;animation:fiveGPulse 3s ease-in-out infinite}
 
-/* ===== SECTION HEAD ===== */
+/* ===== SECTIONS ===== */
 .section{max-width:var(--max);margin:auto;padding:115px 24px;position:relative;z-index:1}
 .tinted{max-width:none;padding-left:max(24px,calc((100% - var(--max))/2));padding-right:max(24px,calc((100% - var(--max))/2));background:var(--surface);position:relative;overflow:hidden}
-.tinted::before{
-  content:'';
-  position:absolute;
-  top:-30%;
-  right:-10%;
-  width:500px;
-  height:500px;
-  background:radial-gradient(circle,rgba(0,212,255,.02),transparent 70%);
-  pointer-events:none;
-}
+.tinted::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,255,.02),transparent 70%);pointer-events:none}
 .section-head{margin-bottom:55px;max-width:850px}
 .section-head h2{font:700 clamp(34px,5vw,58px)/1.05 "Space Grotesk";letter-spacing:-2px;margin:0}
+
+/* ===== ABOUT ===== */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
 .about-grid p{font-size:16px}
 
@@ -282,31 +111,34 @@ nav a:hover{color:var(--text)}
 .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .skill-grid article,.edu-grid article,.cert-grid article{border:1px solid var(--line);padding:25px;border-radius:16px;background:rgba(255,255,255,.02);transition:all .3s ease;position:relative;overflow:hidden}
 .skill-grid article:hover,.edu-grid article:hover,.cert-grid article:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,212,255,.05)}
-.skill-grid article::before,.edu-grid article::before,.cert-grid article::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle at 30% 50%,rgba(0,212,255,.02),transparent 60%);
-  opacity:0;
-  transition:opacity .5s ease;
-}
+.skill-grid article::before,.edu-grid article::before,.cert-grid article::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,212,255,.02),transparent 60%);opacity:0;transition:opacity .5s ease}
 .skill-grid article:hover::before,.edu-grid article:hover::before,.cert-grid article:hover::before{opacity:1}
+.skill-grid article h3{display:flex;align-items:center;gap:10px}
 h3{font:700 20px/1.25 "Space Grotesk";margin:0 0 12px;position:relative;z-index:1}
 ul{padding-left:18px;color:var(--muted);margin-bottom:0;position:relative;z-index:1}
 li{margin:5px 0}
-.languages{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.languages span,.chips span{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:11px;color:var(--muted);transition:all .3s ease}
-.languages span:hover,.chips span:hover{border-color:var(--accent);color:var(--text)}
+
+/* Languages */
+.languages-section{margin-top:30px;padding-top:25px;border-top:1px solid var(--line)}
+.languages{display:flex;flex-wrap:wrap;gap:15px}
+.languages span{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.02);transition:all .3s ease}
+.languages span:hover{border-color:var(--accent);color:var(--text)}
 .languages b{color:var(--text);margin-left:5px}
+.language-quote{margin-top:20px;padding:20px 25px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.01);text-align:center}
+.language-quote p{margin:0;color:var(--muted)}
+.language-quote em{color:var(--text);font-style:italic;font-size:18px}
+
+/* ===== TIMELINE ===== */
 .timeline article{display:grid;grid-template-columns:190px 1fr;gap:45px;padding:38px 0;border-top:1px solid var(--line);transition:all .3s ease}
 .timeline article:hover{background:rgba(0,212,255,.02);margin:0 -20px;padding:38px 20px;border-radius:16px}
+.timeline article>div>div:first-child{display:flex;gap:25px;align-items:flex-start;flex-wrap:wrap;margin-bottom:15px}
+.timeline article>div>div:first-child img{width:120px;height:120px;border-radius:16px;object-fit:cover;border:2px solid var(--line);transition:transform .3s ease}
+.timeline article>div>div:first-child img:hover{transform:scale(1.05)}
 time{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:1px}
 .org{margin:0 0 12px;color:var(--text);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-.chips span{background:rgba(0,212,255,.05);border-color:rgba(0,212,255,.1)}
+.chips span{background:rgba(0,212,255,.05);border-color:rgba(0,212,255,.1);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:11px;color:var(--muted);transition:all .3s ease}
+.chips span:hover{border-color:var(--accent);color:var(--text)}
 
 /* ===== PROJECTS ===== */
 .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
@@ -314,11 +146,10 @@ time{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase
 .project:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 20px 40px rgba(0,0,0,.4)}
 .project.featured{background:linear-gradient(145deg,rgba(0,212,255,.06),rgba(124,58,237,.03))}
 .project.featured::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,var(--accent),var(--accent2),var(--accent));background-size:400% 400%;border-radius:20px;z-index:-1;animation:glow 4s ease-in-out infinite;opacity:.2}
-@keyframes glow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .project.featured:hover::before{opacity:.4}
 .project .num{font:700 12px "Space Grotesk";color:var(--accent)}
 .project h3{font-size:24px;margin-top:16px}
-.project a{display:inline-block;margin-top:20px;color:var(--text);font-size:13px;font-weight:700;transition:color .3s ease,transform .3s ease}
+.project a{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--text);font-size:13px;font-weight:700;transition:color .3s ease,transform .3s ease}
 .project a:hover{color:var(--accent);transform:translateX(5px)}
 .project-icon{font-size:40px;margin-bottom:10px;display:inline-block;animation:floatIcon 3s ease-in-out infinite}
 .project:nth-child(1) .project-icon{animation-delay:0s}
@@ -361,8 +192,8 @@ time{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase
 .cert-grid article:nth-child(9) .cert-icon{animation-delay:.5s}
 .cert-grid article:nth-child(10) .cert-icon{animation-delay:.9s}
 .cert-grid article time{font-size:11px;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:8px}
-.cert-grid article h3{font:700 18px/1.2 "Space Grotesk";margin:0 0 5px 0}
-.cert-grid article .org{color:var(--text);font-weight:600;font-size:13px;margin:0 0 10px 0}
+.cert-grid article h3{font:700 18px/1.2 "Space Grotesk";margin:0 0 5px}
+.cert-grid article .org{color:var(--text);font-weight:600;font-size:13px;margin:0 0 10px}
 .cert-grid article p{font-size:14px;line-height:1.6;margin:0;color:var(--muted)}
 
 /* ===== PUBLICATIONS ===== */
@@ -386,33 +217,32 @@ time{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase
 .pub-content .authors{font-size:13px;color:var(--text);margin:0}
 .pub-content .pub-description{font-size:15px;line-height:1.7;color:var(--muted);margin:5px 0}
 .pub-content .chips{margin-top:5px}
+.pub-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:var(--text);font-size:13px;font-weight:700;transition:color .3s ease,transform .3s ease}
+.pub-link:hover{color:var(--accent);transform:translateX(5px)}
 
 /* ===== BLOG ===== */
 .blog-container{display:flex;flex-direction:column;gap:40px}
 .blog-card{display:grid;grid-template-columns:80px 1fr;gap:30px;align-items:flex-start;border:1px solid var(--line);border-radius:24px;padding:40px;background:linear-gradient(145deg,rgba(0,212,255,.03),rgba(124,58,237,.02));transition:all .4s ease;position:relative;overflow:hidden}
 .blog-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,212,255,.03),transparent 60%);animation:rotateGlow 20s linear infinite;pointer-events:none}
-@keyframes rotateGlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 .blog-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 25px 50px rgba(0,0,0,.3)}
 .blog-icon{font-size:48px;animation:pulseGlow 2s ease-in-out infinite;position:relative;z-index:1}
-@keyframes pulseGlow{0%,100%{transform:scale(1);filter:drop-shadow(0 0 10px rgba(0,212,255,.2))}50%{transform:scale(1.1);filter:drop-shadow(0 0 30px rgba(0,212,255,.4))}}
 .blog-card>div{position:relative;z-index:1}
-.blog-card h3{font:700 26px/1.3 "Space Grotesk";margin:0 0 12px 0;background:linear-gradient(90deg,var(--text),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.blog-card>div>p{font-size:16px;color:var(--muted);margin:0 0 20px 0;line-height:1.8}
+.blog-card h3{font:700 26px/1.3 "Space Grotesk";margin:0 0 12px;background:linear-gradient(90deg,var(--text),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-card>div>p{font-size:16px;color:var(--muted);margin:0 0 20px;line-height:1.8}
 .blog-topics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
 .blog-topics span{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:12px;color:var(--muted);transition:all .3s ease;cursor:default}
 .blog-topics span:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,212,255,.1)}
 .blog-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .soon{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:8px 20px;border:2px solid var(--accent);border-radius:999px;animation:shimmer 2s ease-in-out infinite}
-@keyframes shimmer{0%,100%{opacity:1}50%{opacity:.5}}
 .blog-notify{padding:8px 24px;border-radius:999px;background:var(--accent);color:#0a0a12;font-size:13px;font-weight:700;transition:all .3s ease;text-decoration:none}
 .blog-notify:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(0,212,255,.3)}
 .blog-preview{border:1px solid var(--line);border-radius:20px;padding:30px;background:rgba(255,255,255,.01)}
-.blog-preview h4{font:700 18px "Space Grotesk";margin:0 0 20px 0;color:var(--text)}
+.blog-preview h4{font:700 18px "Space Grotesk";margin:0 0 20px;color:var(--text)}
 .blog-topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .topic-item{display:flex;gap:15px;align-items:flex-start;padding:15px;border:1px solid var(--line);border-radius:14px;transition:all .3s ease;background:rgba(255,255,255,.01)}
 .topic-item:hover{transform:translateY(-5px);border-color:var(--accent2);box-shadow:0 10px 25px rgba(0,0,0,.2);background:rgba(124,58,237,.05)}
 .topic-icon{font-size:28px;flex-shrink:0}
-.topic-item h5{font:600 14px/1.2 "Space Grotesk";margin:0 0 5px 0;color:var(--text)}
+.topic-item h5{font:600 14px/1.2 "Space Grotesk";margin:0 0 5px;color:var(--text)}
 .topic-item p{font-size:12px;color:var(--muted);margin:0;line-height:1.5}
 
 /* ===== CONTACT ===== */
@@ -431,6 +261,7 @@ time{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase
 .contact-link:hover .contact-text{transform:translateX(5px)}
 .contact-link .contact-arrow{position:relative;z-index:1;font-size:16px;transition:transform .3s ease;opacity:.5}
 .contact-link:hover .contact-arrow{transform:translateX(8px);opacity:1}
+
 .contact-link.email{border-color:rgba(0,212,255,.2)}
 .contact-link.email::before{background:rgba(0,212,255,.05)}
 .contact-link.email:hover{border-color:#00d4ff;box-shadow:0 8px 30px rgba(0,212,255,.1)}
@@ -467,6 +298,9 @@ nav{display:none}.menu{display:block;margin-left:auto;margin-right:8px}.nav{gap:
 .hero-card{height:360px}
 .about-grid,.skill-grid,.project-grid,.edu-grid,.cert-grid{grid-template-columns:1fr}
 .timeline article{grid-template-columns:1fr;gap:10px}
+.timeline article:hover{margin:0;padding:38px 0}
+.timeline article>div>div:first-child{flex-direction:column;align-items:center;text-align:center}
+.timeline article>div>div:first-child img{width:100px;height:100px}
 .blog-card{grid-template-columns:1fr;text-align:center;padding:25px}
 .blog-card .blog-icon{text-align:center}
 .blog-topics{justify-content:center}
@@ -484,11 +318,9 @@ nav{display:none}.menu{display:block;margin-left:auto;margin-right:8px}.nav{gap:
 .contact-links{flex-direction:column;gap:12px}
 .contact-link{padding:12px 20px;font-size:13px}
 .contact-link .contact-icon{font-size:18px}
-.timeline article>div>div:first-child{flex-direction:column;align-items:center;text-align:center}
-.timeline article>div>div:first-child img{width:100px;height:100px}
 .hero h1{letter-spacing:-3px}
 footer{flex-direction:column;text-align:center}
 }
 
-/* Light Mode - يظهر بشكل مختلف */
+/* ===== LIGHT MODE ===== */
 .light{--bg:#f0f4f8;--surface:#e2e8f0;--surface2:#cbd5e1;--text:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#0284c7;--accent2:#7c3aed}
